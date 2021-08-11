@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="products.js">
+    <link rel="stylesheet" href="products.css">
+    <script src="https://kit.fontawesome.com/cce18f0ce0.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+    <div class="divid">
+        <nav class="navbar">
+            <ul class="navbar-links">
+                <li>
+                    <i class="far fa-user-circle"></i><a href="profile.html" class="navbar-home">Profile</a>
+                </li>
+                <li>
+                    <i class="fas fa-shopping-bag"></i><a href="products.html" class="navbar-about">Products</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="top">
+                <h1>Products</h1>
+                <button onclick="openModal()">Add Product</button>
+            </div>
+            <div class="below">
+                <p>NAME</p>
+                <p>DESCRIPTION</p>
+                <p>CATEGORY</p>
+                <p>PRICE</p>
+            </div>
+            <div class="below-below">
+                <label for="name" class="name"></label>
+                <label for="description" class="desc"></label>
+                <label for="category" class="cat"></label>
+                <label for="price" class="price"></label>
+            </div>
+        </div>
+        <div id="modal">
+            <div class="add-pro">
+                <div class="modal-top">
+                    <button class="close" onclick="openModal()">X</button>
+                    <h1>Add a Product</h1>
+                </div>
+                <div class="small-con">
+                    <div class="titl">
+                        <p>Name</p>
+                    </div>
+                    <input type="text" id="name" placeholder="Name">
+                    <div class="titl">
+                        <p>Price</p>
+                    </div>
+                    <input type="text" id="price" placeholder="R">
+                    <div class="titl">
+                        <p>Description</p>
+                    </div>
+                    <input type="text" id="price" placeholder="Description">
+                    <div class="titl">
+                        <p>Catergory</p>
+                    </div>
+                    <input type="text" id="price" placeholder="Catergory">
+                </div>
+            </div>
+            <div class="canadd">
+                <button class="can" onclick="openModal()">Cancel</button>
+                <button class="add" onclick="openModal()">Add</button>
+            </div>
+        </div>
+    </div>
+    <script src="./products.js"></script>
+</body>
+
+</html>

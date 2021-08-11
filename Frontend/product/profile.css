@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.divid{
+    display: flex;
+}
+
+nav{
+}
+
+.navbar{
+    width: 20%;
+    height: 100vh;
+}
+
+.navbar-links{
+    list-style: none;
+}
+
+
+.navbar-links li{
+    padding: 10px;
+}
+
+.navbar-links li:hover{
+    background-color: gray;
+    padding: 10px;
+}
+
+i{
+    margin-right: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

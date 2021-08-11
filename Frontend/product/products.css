@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.divid{
+    display: flex;
+}
+
+nav{
+}
+
+.navbar{
+    width: 20%;
+    height: 100vh;
+}
+
+.navbar-links{
+    list-style: none;
+}
+
+
+.navbar-links li{
+    padding: 10px;
+}
+
+.navbar-links li:hover{
+    background-color: gray;
+    padding: 10px;
+}
+
+i{
+    margin-right: 15px;
+}
+
+
+.container{
+    width: 80%;
+    background-color: #e4e9f1;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+button{
+    padding: 1%;
+    background-color:orange;
+    border-radius: 5%;
+    border: none;
+}
+
+.below{
+    justify-content: space-around;
+    display: flex;
+    font-size: 15px;
+}
+
+.below-below{
+    margin: 10px 50px 0px 50px;
+    width: 90%;
+    height: 8%;
+    background-color: white;
+    align-items: center;
+    padding: 1.7%;
+    box-shadow: 5px;
+}
+
+.name{
+    margin: 0px 40px 0px 20px;
+}
+
+.desc{
+    margin: 0px 40px 0px 70px;
+}
+
+.cat{
+    margin: 0px 40px 0px 120px;
+}
+
+.price{
+    margin: 0px 0px 0px 165px;
+}
+
+#modal.modal-active {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: black;
+    width: 60vw;
+    transform: translate(-17%, -50%);
+    height: 80vh;
+    background-color: white;
+    box-shadow: 5px;
+}
+
+#modal {
+    display: none;
+}
+
+.close{
+    background-color: white;
+    padding: 5%;
+}
+
+.modal-top{
+    display: flex;
+}
+
+.modal-top h1{
+    padding: 5%;
+    font-size: 20px;
+}
+
+.small-con{
+    background-color: #e4e9f1;
+    margin: 40px 40px 20px 40px;
+    height: 50vh;
+}
+
+.titl{
+    font-size: 18px;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px;
+}
+
+input{
+    width: 30vw;
+    height: 5vh;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.canadd{
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.can{
+    background-color: #e4e9f1;
+}
+
+.add{
+    background-color: orange;
+    width: 60px;
+}
