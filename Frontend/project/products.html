@@ -27,18 +27,14 @@
                 <h1>Products</h1>
                 <button onclick="openModal()">Add Product</button>
             </div>
-            <div class="below">
-                <p>NAME</p>
-                <p>DESCRIPTION</p>
-                <p>CATEGORY</p>
-                <p>PRICE</p>
+            <div class="button-container">
+                <button onclick="filterProducts('All')">All</button>
+                <button onclick="filterProducts('shoes')">Shoes</button>
+                <button onclick="filterProducts('Hoodies')">Hoodies</button>
+                <button onclick="filterProducts('Pants')">Pants</button>
+                <button onclick="filterProducts('Tees')">Tee's</button>
             </div>
-            <div class="below-below">
-                <label for="name" class="name"></label>
-                <label for="description" class="desc"></label>
-                <label for="category" class="cat"></label>
-                <label for="price" class="price"></label>
-            </div>
+            <div class="product-container"></div>
         </div>
         <div id="modal">
             <div class="add-pro">
