@@ -97,4 +97,20 @@ label{
     width: 30vw;
     height: 25px;
     margin-left: 55px;
+    text-align: end;
+}
+
+.products-con{
+    padding: 5% 13% 5% 3%;
+    display: grid;
+}
+
+.products{
+    background-color: rgb(255, 255, 255);
+    margin: 15px;
+    display: flex;
+}
+
+.products-details{
+    font-size: 18px;
 }

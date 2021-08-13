@@ -37,7 +37,7 @@ let products = [
         deleteProduct: ""
     },
     {
-        imgURL: "s-l225.jpg",
+        imgURL: "Nike-Sportswear-Big-Swoosh-Woven-Jacket-Windbreaker-Black.jpg",
         name: "Nike Jacket",
         description: "Full Swoosh Hoodie",
         category: "Hoodies",
@@ -67,7 +67,7 @@ let products = [
         deleteProduct: ""
     },
     {
-        imgURL: "Screenshot from 2021-05-13 13-45-11.png",
+        imgURL: "300e1197a1e78d58dc12479fb4e593ab.jpg",
         name: "Jordan Grey Hoodie",
         description: "Grey Nike Jordan Hoodie",
         category: "Hoodies",
@@ -77,7 +77,7 @@ let products = [
         deleteProduct: ""
     },
     {
-        imgURL: "Screenshot from 2021-05-13 13-45-11.png",
+        imgURL: "P0.jpg",
         name: "Nike Tracksuit Pants",
         description: "Just Do It red and black",
         category: "Pants",
