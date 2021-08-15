@@ -34,36 +34,41 @@
                 <button onclick="filterProducts('Pants')">Pants</button>
                 <button onclick="filterProducts('Tees')">Tee's</button>
             </div>
-            <div class="product-container"></div>
-        </div>
-        <div id="modal">
-            <div class="add-pro">
-                <div class="modal-top">
-                    <button class="close" onclick="openModal()">X</button>
-                    <h1>Add a Product</h1>
-                </div>
-                <div class="small-con">
-                    <div class="titl">
-                        <p>Name</p>
-                    </div>
-                    <input type="text" id="name" placeholder="Name">
-                    <div class="titl">
-                        <p>Price</p>
-                    </div>
-                    <input type="text" id="price" placeholder="R">
-                    <div class="titl">
-                        <p>Description</p>
-                    </div>
-                    <input type="text" id="price" placeholder="Description">
-                    <div class="titl">
-                        <p>Catergory</p>
-                    </div>
-                    <input type="text" id="price" placeholder="Catergory">
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <h2>ADD NEW PRODUCT</h2>
+                    <form class="add-product-form">
+                        <div class="form-group">
+                            <label for="title">Name</label>
+                            <input type="text" class="name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Category</label>
+                            <input type="text" class="cat" id="category">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Description</label>
+                            <input type="text" class="desc" id="description">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Price</label>
+                            <input type="text" class="price" id="price">
+                        </div>
+                        <button class="add-btn" type="submit">Add Product</button>
+                    </form>
                 </div>
             </div>
-            <div class="canadd">
-                <button class="can" onclick="openModal()">Cancel</button>
-                <button class="add" onclick="openModal()">Add</button>
+
+            <div class="product-list">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">Name</h1>
+                        <h2 class="card-desc">Description</h2>
+                        <h3 class="card-price">Price</h3>
+                        <a href="#" class="edit-btn" id="edit-post">Edit</a>
+                        <a href="#" class="delete-btn" id="delete-post">Delete</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
