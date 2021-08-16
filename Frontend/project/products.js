@@ -1,5 +1,3 @@
-const mystorage = window.localStorage
-
 const productList = document.querySelector('.product-list');
 const addProductForm = document.querySelector('.add-product-form');
 const nameValue = document.getElementById('name');
@@ -9,6 +7,8 @@ const priceValue = document.getElementById('price')
 const btnSubmit = document.querySelector('.add-btn')
 let output = '';
 
+
+
 const renderProduct = (item) => {
     item.forEach(item => {
         output += `
@@ -17,9 +17,9 @@ const renderProduct = (item) => {
                 <h1 class="card-title">${item.name}</h1>
                 <h2 class="card-desc">${item.description}</h2>
                 <h3 class="card-price">R${item.price}</h3>
-                <h4 class="card-cat">R${item.category}</h4>
-                <a href="#" class="edit-btn id="edit-post" >Edit</a>
-                <a href="#" class="delete-btn" id="delete-post">Delete</a>
+                <h4 class="card-cat">${item.category}</h4>
+                <a href="#" class="edit-btn id="edit-product" >Edit</a>
+                <a href="#" class="delete-btn" id="delete-product">Delete</a>
             </div>
         </div>
         `;
@@ -27,27 +27,30 @@ const renderProduct = (item) => {
     productList.innerHTML = output;
 }
 
-const url = 'https://flask-eomp1.herokuapp.com/select-product/';
-
-fetch(url)
+// to view products 
+fetch('https://flask-eomp1.herokuapp.com/select-product/')
     .then(res => res.json())
     .then(data => renderProduct(data))
 
+
+function deleteProduct() {
+    
+}
 productList.addEventListener('click', (e) => {
     e.preventDefault();
-    let delbtnPressed = e.target.id == 'delete-post';
-    let editbtnPressed = e.target.id == 'edit-post';
-    console.log(e.target.id);
+    let delbtnPressed = e.target.id == 'delete-product';
+    let editbtnPressed = e.target.id == 'edit-product';
+    console.log(e.target.id)
 
     let id = (e.target.parentElement.dataset.id);
 
     //removes product
     if(delbtnPressed){
-        fetch(`${url}/${id}`, {
-            method: 'DELETE',
+        fetch(`${'https://flask-eomp1.herokuapp.com/delete-products/'}${id}/`, {
+            method: 'GET',
         })
             .then(res => res.json())
-            .then(() => location.reload())
+            //.then(() => location.reload())
     }
 
     if(editbtnPressed){
@@ -58,16 +61,16 @@ productList.addEventListener('click', (e) => {
         let priceContent = parent.querySelector('card-price').textContent;
 
         nameValue.value = titleContent;
-        catValue.value = descContent;
-        descValue.value = catContent;
+        catValue.value = catContent;
+        descValue.value = descContent;
         priceValue.value = priceContent;
     }
 
     //update products
     btnSubmit.addEventListener('click',(e) =>{
         e.preventDefault();
-        fetch(`${url}/${id}`, {
-            method: 'PATCH',
+        fetch(`${'https://flask-eomp1.herokuapp.com/update/'}${id}/`, {
+            method: 'PUT',
             headers:{
                 'Content-Type': 'application/json'
             },
@@ -80,37 +83,40 @@ productList.addEventListener('click', (e) => {
         })
         .then(res => res.json())
         .then(() => location.reload())
-        console.log('post updated');
+        console.log('product updated');
     })
 })
 
+let addBtn = document.querySelector(".add-btn")
+addBtn.addEventListener('submit', createProduct)
+    
+function createProduct() {
+    let nameValue = document.querySelector(".name").value
+    let catValue = document.querySelector(".cat").value
+    let descValue = document.querySelector(".desc").value
+    let priceValue = document.querySelector(".price").value
+    console.log(nameValue.value)
+    console.log(catValue.value)
+    console.log(descValue.value)
+    console.log(priceValue.value)
 
-addProductForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    //console.log(nameValue.value)
-    //console.log(catValue.value)
-    //console.log(descValue.value)
-    //console.log(priceValue.value)
-
-
-    //run app in python and test again
-    fetch(url, { 
+    fetch('https://flask-eomp1.herokuapp.com/create-product/', { 
         method : 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization' : `jwt ${mystorage.getItem('jwt-token')}`
+            // 'authorization': 'jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkxMTE1NTMsImlhdCI6MTYyOTEwNzU1MywibmJmIjoxNjI5MTA3NTUzLCJpZGVudGl0eSI6Mjd9.1Zo8txtP_ZpwQiEitUTXgeu60rARi2B4gRcbyTIVdtA'
         },
         body: JSON.stringify({
             name : nameValue.value,
             category : catValue.value,
-            description : descValue.value,
+            description : descValue.value,  
             price : priceValue.value
         })
     })
-    .then(response => response.json)
+    .then(response => response.json())
     .then(data => {
         const dataArr = [];
+        console.log(data);
         dataArr.push(data);
         renderProduct(dataArr);
     })
@@ -120,4 +126,4 @@ addProductForm.addEventListener('submit', (e) => {
     catValue.value = '';
     descValue.value = '';
     priceValue.value = '';
-})
+}   
