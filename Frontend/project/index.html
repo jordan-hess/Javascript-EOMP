@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./login.css">
-    <link rel="stylesheet" href="login.js">
 </head>
 
 <body>
@@ -14,16 +13,17 @@
         <header>Login User</header>
         <div class="login-details">
             <label for="username">Username</label>
-            <input type="text" id="usernm" required name="username" class="log-usernm" placeholder="Type your username">
+            <input type="text" name="" placeholder="Enter Username" id="username">
             <div class="line"></div>
             <label for="password">Password</label>
-            <input type="text" id="userpass" required name="password" class="log-pass" placeholder="Type your password">
+            <input type="password" name="" placeholder="Enter Password" id="password">
             <div class="line"></div>
             <div class="log-btn">
-                <button><a href="profile.html">Login</a></button>
+                <input type="submit" name="" value="Login"  onclick="validate()">
             </div>
         </div>
     </div>
+    <script src="login.js"></script>
 </body>
 
 </html>

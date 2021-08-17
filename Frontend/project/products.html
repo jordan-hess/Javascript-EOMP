@@ -34,9 +34,12 @@
                 <button onclick="filterProducts('Pants')">Pants</button>
                 <button onclick="filterProducts('Tees')">Tee's</button>
             </div>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <h2>ADD NEW PRODUCT</h2>
+            <div id="modal">
+                <div class="">
+                    <div class="head">
+                        <h2>ADD NEW PRODUCT</h2>
+                        <button class="close" onclick="openModal()">X</button>
+                    </div>
                     <form class="add-product-form">
                         <div class="form-group">
                             <label for="title">Name</label>
@@ -57,20 +60,20 @@
                         <button class="add-btn" type="submit">Confirm add/delete/edit</button>
                     </form>
                 </div>
-            </div>
-
-            <div class="product-list">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title">Name</h1>
-                        <h2 class="card-desc">Description</h2>
-                        <h3 class="card-price">Price</h3>
-                        <h4 class="card-cat">Category</h4>
-                        <button href="#" class="edit-btn" id="edit-product" type="click" onclick="sureEdit()">Edit</button>
-                        <button href="#" class="delete-btn" id="delete-product" type="click"  onclick="sureDelete()">Delete</button>
+                <div class="product-list">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Name</h1>
+                            <h2 class="card-desc">Description</h2>
+                            <h3 class="card-price">Price</h3>
+                            <h4 class="card-cat">Category</h4>
+                            <button href="#" class="edit-btn" id="edit-product" type="click">Edit</button>
+                            <button href="#" class="delete-btn" id="delete-product" type="click">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <script src="./products.js"></script>

@@ -83,7 +83,6 @@ productList.addEventListener('click', (e) => {
         })
         .then(res => res.json())
         .then(() => location.reload())
-        alert('product updated');
     })
 })
 
@@ -125,8 +124,16 @@ function addPro() {
             catValue.value = '';
             descValue.value = '';
             priceValue.value = '';
+            
         }) 
+        .then(() => location.reload())
     })
 }
 
 addPro()
+
+
+//   function to open modal
+function openModal() {
+    document.getElementById("modal").classList.toggle("modal-active");
+  }
