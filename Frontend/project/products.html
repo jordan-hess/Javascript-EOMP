@@ -54,7 +54,7 @@
                             <label for="title">Price</label>
                             <input type="text" class="price" id="price">
                         </div>
-                        <button class="add-btn" type="submit">Add Product</button>
+                        <button class="add-btn" type="submit">Confirm add/delete/edit</button>
                     </form>
                 </div>
             </div>
@@ -66,8 +66,8 @@
                         <h2 class="card-desc">Description</h2>
                         <h3 class="card-price">Price</h3>
                         <h4 class="card-cat">Category</h4>
-                        <a href="#" class="edit-btn" id="edit-post">Edit</a>
-                        <a href="#" class="delete-btn" id="delete-post">Delete</a>
+                        <button href="#" class="edit-btn" id="edit-product" type="click" onclick="sureEdit()">Edit</button>
+                        <button href="#" class="delete-btn" id="delete-product" type="click"  onclick="sureDelete()">Delete</button>
                     </div>
                 </div>
             </div>
@@ -75,5 +75,4 @@
     </div>
     <script src="./products.js"></script>
 </body>
-
 </html>

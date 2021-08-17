@@ -5,8 +5,8 @@ const catValue = document.getElementById('category');
 const descValue = document.getElementById('description');
 const priceValue = document.getElementById('price')
 const btnSubmit = document.querySelector('.add-btn')
+const btnDelete = document.querySelector('.del-btn')
 let output = '';
-
 
 
 const renderProduct = (item) => {
@@ -54,11 +54,11 @@ productList.addEventListener('click', (e) => {
     }
 
     if(editbtnPressed){
-        const parent = e.target.parentElement;
-        let titleContent = parent.querySelector('.card-title').textContent;
-        let descContent = parent.querySelector('.card-desc').textContent;
-        let catContent = parent.querySelector('.card-cat').textContent;
-        let priceContent = parent.querySelector('card-price').textContent;
+        const parent = e.target.getElementById;
+        let titleContent = parent.querySelector('name').textContent;
+        let descContent = parent.querySelector('description').textContent;
+        let catContent = parent.querySelector('category').textContent;
+        let priceContent = parent.querySelector('price').textContent;
 
         nameValue.value = titleContent;
         catValue.value = catContent;
@@ -76,54 +76,57 @@ productList.addEventListener('click', (e) => {
             },
             body: JSON.stringify({
                 name: nameValue.value,
-                cat: catValue.value,
-                desc: descValue.value,
+                category: catValue.value,
+                description: descValue.value,
                 price: priceValue.value,
             })
         })
         .then(res => res.json())
         .then(() => location.reload())
-        console.log('product updated');
+        alert('product updated');
     })
 })
 
-let addBtn = document.querySelector(".add-btn")
-addBtn.addEventListener('submit', createProduct)
+
+// function to add products
+function addPro() {
     
-function createProduct() {
-    let nameValue = document.querySelector(".name").value
-    let catValue = document.querySelector(".cat").value
-    let descValue = document.querySelector(".desc").value
-    let priceValue = document.querySelector(".price").value
-    console.log(nameValue.value)
-    console.log(catValue.value)
-    console.log(descValue.value)
-    console.log(priceValue.value)
+    addProductForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    
+        // console.log(nameValue.value)
+        // console.log(catValue.value)
+        // console.log(descValue.value)
+        // console.log(priceValue.value)
 
     fetch('https://flask-eomp1.herokuapp.com/create-product/', { 
         method : 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // 'authorization': 'jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkxMTE1NTMsImlhdCI6MTYyOTEwNzU1MywibmJmIjoxNjI5MTA3NTUzLCJpZGVudGl0eSI6Mjd9.1Zo8txtP_ZpwQiEitUTXgeu60rARi2B4gRcbyTIVdtA'
+            // 'Authorization' : `jwt ${mystorage.getItem('jwt-token')}`
         },
-        body: JSON.stringify({
-            name : nameValue.value,
-            category : catValue.value,
-            description : descValue.value,  
-            price : priceValue.value
+        body: JSON.stringify(
+            {
+            'name' : nameValue.value,
+            'category' : catValue.value,
+            'description' : descValue.value,
+            'price' : priceValue.value
         })
     })
-    .then(response => response.json())
-    .then(data => {
-        const dataArr = [];
-        console.log(data);
-        dataArr.push(data);
-        renderProduct(dataArr);
-    })
+    .then(response => response.json)
+        .then(data => {
+            const dataArr = [];
+            dataArr.push(data);
+            renderProduct(dataArr);
+            alert('product created successfully');
 
-    //resets input fields
-    nameValue.value = '';
-    catValue.value = '';
-    descValue.value = '';
-    priceValue.value = '';
-}   
+            //resets input fields
+            nameValue.value = '';
+            catValue.value = '';
+            descValue.value = '';
+            priceValue.value = '';
+        }) 
+    })
+}
+
+addPro()
