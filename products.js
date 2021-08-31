@@ -1,3 +1,8 @@
+// Notes
+// When editing click the edit button then type out your new product info on the form then click confirm to complete the edit 
+// When deleting press the delete button and confirm
+
+
 const productList = document.querySelector('.product-list');
 const addProductForm = document.querySelector('.add-product-form');
 const nameValue = document.getElementById('name');

@@ -129,21 +129,22 @@ input{
 }
 
 .card-body{
-    width: 100vw;
+    width: 20vw;
     display: table-cell;
     
 }
 
 .card{
-    width: 60vw;
+    width: 20vw;
     margin: 5px;
 }
  
 .product-list{
     display: flex;
-    width: 60vw;
+    width: 90vw;
     height: 60vh;
     margin: 10px;
+    flex-wrap: wrap;
 }
 
 h1,h2,h3,h4{
